@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <meta name="description" content="SUPREME STORE - Premium gaming accounts, UC top-up, and digital design services.">
   <title>SUPREME STORE | Gaming & Digital Services</title>
   
@@ -27,6 +27,7 @@
     html {
       font-size: 16px;
       scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
     }
     
     body {
@@ -37,11 +38,14 @@
       overflow-x: hidden;
       width: 100%;
       max-width: 100vw;
+      min-height: 100vh;
+      -webkit-user-select: none;
+      user-select: none;
     }
     
     /* Custom scrollbar */
     ::-webkit-scrollbar {
-      width: 6px;
+      width: 4px;
     }
     ::-webkit-scrollbar-track {
       background: #1a1a1a;
@@ -83,7 +87,7 @@
     }
     .loader-logo {
       font-family: 'Orbitron', sans-serif;
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(1.8rem, 6vw, 3rem);
       font-weight: 900;
       color: #ff3131;
       text-shadow: 0 0 20px #ff3131;
@@ -121,7 +125,7 @@
     .navbar {
       position: sticky;
       top: 0;
-      background: rgba(10, 10, 10, 0.9);
+      background: rgba(10, 10, 10, 0.95);
       backdrop-filter: blur(15px);
       -webkit-backdrop-filter: blur(15px);
       border-bottom: 1px solid rgba(255, 49, 49, 0.3);
@@ -130,12 +134,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      transition: all 0.4s;
       width: 100%;
+      min-height: 55px;
     }
     .logo {
       font-family: 'Orbitron', sans-serif;
-      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
       font-weight: 900;
       color: #ff3131;
       text-shadow: 0 0 15px #ff3131;
@@ -144,15 +148,14 @@
     }
     .nav-links {
       display: flex;
-      gap: clamp(0.8rem, 2vw, 2rem);
+      gap: clamp(0.6rem, 1.5vw, 1.8rem);
       list-style: none;
-      flex-wrap: wrap;
     }
     .nav-links a {
       color: #ccc;
       text-decoration: none;
       font-weight: 500;
-      font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+      font-size: clamp(0.7rem, 1.3vw, 0.9rem);
       font-family: 'Poppins', sans-serif;
       transition: 0.3s;
       position: relative;
@@ -181,11 +184,13 @@
       font-size: 1.5rem;
       color: #ff3131;
       cursor: pointer;
+      padding: 5px;
+      z-index: 1000;
     }
     
     /* Sections */
     section {
-      padding: clamp(2rem, 5vw, 5rem) 1rem;
+      padding: clamp(2rem, 5vw, 4rem) 1rem;
       position: relative;
       z-index: 2;
       width: 100%;
@@ -197,10 +202,10 @@
     }
     .section-title {
       font-family: 'Orbitron', sans-serif;
-      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-size: clamp(1.3rem, 4vw, 2.2rem);
       font-weight: 700;
       text-align: center;
-      margin-bottom: clamp(1.5rem, 3vw, 3rem);
+      margin-bottom: clamp(1.2rem, 3vw, 2.5rem);
       color: #fff;
       text-shadow: 0 0 15px #ff3131;
       letter-spacing: 2px;
@@ -208,12 +213,12 @@
     
     /* Glassmorphism Cards */
     .glass-card {
-      background: rgba(20, 20, 20, 0.6);
+      background: rgba(20, 20, 20, 0.7);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 49, 49, 0.25);
       border-radius: 16px;
-      padding: clamp(1rem, 3vw, 2rem);
+      padding: clamp(1rem, 3vw, 1.8rem);
       transition: all 0.4s ease;
       box-shadow: 0 8px 25px rgba(0,0,0,0.6);
       height: 100%;
@@ -228,7 +233,7 @@
     
     /* Hero */
     .hero {
-      min-height: 80vh;
+      min-height: 70vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -238,7 +243,7 @@
     }
     .hero h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: clamp(2rem, 6vw, 4rem);
+      font-size: clamp(1.8rem, 6vw, 3.5rem);
       font-weight: 900;
       color: #ff3131;
       text-shadow: 0 0 30px #ff3131, 0 0 60px #ff5500;
@@ -246,7 +251,7 @@
       word-wrap: break-word;
     }
     .hero p {
-      font-size: clamp(0.9rem, 2vw, 1.3rem);
+      font-size: clamp(0.9rem, 2vw, 1.2rem);
       color: #ddd;
       max-width: 600px;
       margin-bottom: 2rem;
@@ -259,7 +264,7 @@
       justify-content: center;
     }
     .btn {
-      padding: 0.7rem 1.5rem;
+      padding: 0.6rem 1.3rem;
       border-radius: 50px;
       font-weight: 600;
       font-family: 'Poppins', sans-serif;
@@ -271,7 +276,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+      font-size: clamp(0.75rem, 1.3vw, 0.9rem);
       white-space: nowrap;
     }
     .btn-primary {
@@ -297,25 +302,31 @@
     }
     
     /* Service Cards Grid */
-    .grid-2, .grid-3, .grid-4 {
+    .grid-3 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: clamp(1rem, 2vw, 2rem);
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: clamp(0.8rem, 2vw, 1.5rem);
+      margin-top: 1.5rem;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: clamp(0.8rem, 2vw, 1.5rem);
       margin-top: 1.5rem;
     }
     .service-icon {
-      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
       color: #ff3131;
       margin-bottom: 0.8rem;
     }
     .card-title {
       font-family: 'Orbitron', sans-serif;
-      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-size: clamp(1rem, 2vw, 1.3rem);
       margin-bottom: 0.6rem;
       color: #fff;
     }
     .glass-card p {
-      font-size: clamp(0.8rem, 1.3vw, 0.95rem);
+      font-size: clamp(0.75rem, 1.2vw, 0.9rem);
       flex-grow: 1;
     }
     
@@ -326,13 +337,13 @@
       gap: 1rem;
       background: rgba(20,20,20,0.7);
       backdrop-filter: blur(10px);
-      padding: clamp(1rem, 2vw, 1.5rem);
+      padding: clamp(0.8rem, 2vw, 1.2rem);
       border-radius: 14px;
       border-left: 3px solid #ff3131;
-      font-size: clamp(0.8rem, 1.3vw, 0.95rem);
+      font-size: clamp(0.75rem, 1.2vw, 0.9rem);
     }
     .feature-item i {
-      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
       color: #ff3131;
       flex-shrink: 0;
     }
@@ -341,7 +352,7 @@
     .rules-list {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.8rem;
       max-width: 700px;
       margin: 0 auto;
     }
@@ -351,14 +362,14 @@
       gap: 1rem;
       background: rgba(20,20,20,0.7);
       backdrop-filter: blur(12px);
-      padding: 0.9rem 1.5rem;
+      padding: 0.7rem 1.2rem;
       border-radius: 30px;
       border: 1px solid rgba(255,49,49,0.3);
-      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      font-size: clamp(0.8rem, 1.3vw, 0.95rem);
     }
     .rule-num {
       font-family: 'Orbitron', sans-serif;
-      font-size: clamp(1.3rem, 2.5vw, 2rem);
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
       color: #ff3131;
       text-shadow: 0 0 10px #ff3131;
       flex-shrink: 0;
@@ -366,7 +377,7 @@
     
     /* Contact */
     .contact-phone {
-      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-size: clamp(1rem, 2vw, 1.3rem);
       margin: 0.4rem 0;
     }
     .contact-buttons {
@@ -377,7 +388,7 @@
       margin-top: 1.5rem;
     }
     .disclaimer {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: #888;
       margin-top: 1rem;
       border-top: 1px solid #333;
@@ -397,17 +408,24 @@
     footer h3 {
       font-family: 'Orbitron';
       color: #ff3131;
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
     }
     footer p {
-      font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+      font-size: clamp(0.75rem, 1.3vw, 0.9rem);
     }
     .social-icons {
       margin: 1.2rem 0;
       display: flex;
-      gap: clamp(1rem, 2vw, 1.5rem);
+      gap: clamp(0.8rem, 2vw, 1.5rem);
       justify-content: center;
-      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    }
+    .social-icons a {
+      transition: 0.3s;
+    }
+    .social-icons a:hover {
+      transform: scale(1.2);
+      text-shadow: 0 0 20px #ff3131;
     }
     
     /* Back to Top */
@@ -436,43 +454,77 @@
       visibility: visible;
     }
     
-    /* Responsive Design */
+    /* ===== MOBILE RESPONSIVE FIXES ===== */
     @media (max-width: 768px) {
       html {
         font-size: 14px;
       }
       
+      /* Hide nav links by default, show when active */
       .nav-links {
         position: fixed;
-        top: 55px;
+        top: 0;
         right: -100%;
         flex-direction: column;
-        background: rgba(10,10,10,0.98);
-        width: 220px;
+        background: rgba(10, 10, 10, 0.98);
+        width: 75%;
+        max-width: 280px;
         height: 100vh;
-        padding: 1.5rem;
-        transition: 0.4s;
+        padding: 70px 1.5rem 2rem;
+        transition: right 0.35s ease-in-out;
         backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         gap: 1.2rem;
+        overflow-y: auto;
+        border-left: 1px solid rgba(255,49,49,0.3);
       }
       .nav-links.active {
         right: 0;
       }
+      
+      /* Overlay when menu is open */
+      .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        z-index: 998;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+      }
+      .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      
       .hamburger {
         display: block;
       }
       
+      .nav-links a {
+        font-size: 1.1rem;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(255,49,49,0.1);
+        width: 100%;
+      }
+      .nav-links a::after {
+        display: none;
+      }
+      
       .grid-3, .grid-4 {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
       }
       
       .hero {
-        min-height: 60vh;
+        min-height: 50vh;
       }
       
       .rule-item {
-        padding: 0.7rem 1rem;
+        padding: 0.6rem 1rem;
       }
     }
     
@@ -482,33 +534,43 @@
       }
       
       .navbar {
-        padding: 0.5rem 1rem;
+        padding: 0.4rem 0.8rem;
+        min-height: 48px;
       }
       
       section {
-        padding: 1.5rem 0.5rem;
+        padding: 1.2rem 0.5rem;
       }
       
-      .grid-2, .grid-3, .grid-4 {
+      .grid-3, .grid-4 {
         grid-template-columns: 1fr;
-        gap: 0.8rem;
+        gap: 0.7rem;
       }
       
       .btn-group {
         flex-direction: column;
         align-items: center;
+        width: 100%;
       }
       
       .btn {
         width: 100%;
         justify-content: center;
+        padding: 0.6rem 1rem;
       }
       
       #backToTop {
-        width: 35px;
-        height: 35px;
-        bottom: 30px;
-        right: 15px;
+        width: 32px;
+        height: 32px;
+        bottom: 20px;
+        right: 12px;
+        font-size: 0.8rem;
+      }
+      
+      .nav-links {
+        width: 85%;
+        max-width: 260px;
+        padding: 60px 1.2rem 1.5rem;
       }
     }
   </style>
@@ -519,6 +581,9 @@
     <div class="loader-logo">SUPREME STORE</div>
     <div class="loader-bar"><div class="loader-progress"></div></div>
   </div>
+
+  <!-- Overlay for mobile nav -->
+  <div class="nav-overlay" id="navOverlay"></div>
 
   <!-- Particles Background -->
   <div id="particles-js"></div>
@@ -540,7 +605,7 @@
   <!-- Hero Section -->
   <section id="hero" class="hero">
     <div data-aos="fade-down" data-aos-duration="1000">
-      <h1>SUPREME STORE </h1>
+      <h1>SUPREME STORE</h1>
       <p>Your One-Stop Shop for Gaming & Digital Services</p>
       <div class="btn-group">
         <a href="#pubg" class="btn btn-primary"><i class="fas fa-gamepad"></i> View Services</a>
@@ -685,41 +750,40 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   
   <script>
-    // Initialize AOS with performance settings
+    // Initialize AOS
     AOS.init({ 
       once: true, 
-      duration: 700,
-      disable: 'mobile'
+      duration: 600
     });
     
     // Loading screen
     window.addEventListener('load', () => {
       setTimeout(() => {
         document.getElementById('loader').classList.add('hidden');
-      }, 1500);
+      }, 1200);
     });
     
     // Particles.js configuration
     particlesJS('particles-js', {
       particles: {
         number: { 
-          value: window.innerWidth < 768 ? 30 : 60,
+          value: window.innerWidth < 768 ? 25 : 50,
           density: { enable: true, value_area: 800 } 
         },
         color: { value: '#ff3131' },
         shape: { type: 'circle' },
-        opacity: { value: 0.4, random: true },
-        size: { value: 2.5, random: true },
+        opacity: { value: 0.3, random: true },
+        size: { value: 2, random: true },
         line_linked: { 
           enable: true, 
-          distance: 130, 
+          distance: 120, 
           color: '#ff3131', 
-          opacity: 0.15, 
+          opacity: 0.12, 
           width: 1 
         },
         move: { 
           enable: true, 
-          speed: 1.5, 
+          speed: 1.2, 
           direction: 'none', 
           random: false, 
           straight: false, 
@@ -732,35 +796,46 @@
           onhover: { enable: true, mode: 'repulse' }, 
           onclick: { enable: true, mode: 'push' } 
         },
-        modes: { repulse: { distance: 80 } }
+        modes: { repulse: { distance: 70 } }
       },
       retina_detect: true
     });
     
-    // Mobile nav toggle
+    // Mobile nav toggle with overlay
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
+    const overlay = document.getElementById('navOverlay');
     
-    hamburger.addEventListener('click', () => {
+    function toggleNav() {
       navLinks.classList.toggle('active');
-    });
+      overlay.classList.toggle('active');
+      // Change hamburger icon
+      const icon = hamburger.querySelector('i');
+      if (navLinks.classList.contains('active')) {
+        icon.className = 'fas fa-times';
+      } else {
+        icon.className = 'fas fa-bars';
+      }
+    }
     
+    hamburger.addEventListener('click', toggleNav);
+    
+    // Close nav when clicking a link
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
+        if (navLinks.classList.contains('active')) {
+          toggleNav();
+        }
       });
     });
     
-    document.addEventListener('click', (e) => {
-      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-        navLinks.classList.remove('active');
-      }
-    });
+    // Close nav when clicking overlay
+    overlay.addEventListener('click', toggleNav);
     
     // Back to top button
     const backBtn = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
+      if (window.scrollY > 300) {
         backBtn.classList.add('show');
       } else {
         backBtn.classList.remove('show');
@@ -773,21 +848,49 @@
     
     // Copy phone number
     document.getElementById('copyBtn').addEventListener('click', () => {
-      navigator.clipboard.writeText('0747048630').then(() => {
+      const number = '0747048630';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(number).then(() => {
+          const btn = document.getElementById('copyBtn');
+          const originalText = btn.innerHTML;
+          btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+          btn.style.background = '#25D366';
+          btn.style.color = '#fff';
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.background = '#ff3131';
+            btn.style.color = '#fff';
+          }, 2000);
+        }).catch(() => {
+          fallbackCopy(number);
+        });
+      } else {
+        fallbackCopy(number);
+      }
+    });
+    
+    function fallbackCopy(text) {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
         const btn = document.getElementById('copyBtn');
         const originalText = btn.innerHTML;
         btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-        btn.style.background = '#ff3131';
+        btn.style.background = '#25D366';
         btn.style.color = '#fff';
         setTimeout(() => {
           btn.innerHTML = originalText;
           btn.style.background = '#ff3131';
           btn.style.color = '#fff';
         }, 2000);
-      }).catch(() => {
+      } catch (err) {
         alert('📋 Number: 0747 048 630');
-      });
-    });
+      }
+      document.body.removeChild(textArea);
+    }
     
     // Smooth scroll for all anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -797,17 +900,18 @@
         if (targetId === '#') return;
         const target = document.querySelector(targetId);
         if (target) {
-          const offset = 70;
+          const offset = 60;
           const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
           window.scrollTo({ top: targetPosition, behavior: 'smooth' });
         }
       });
     });
     
+    // Handle resize for particles
     window.addEventListener('resize', () => {
       if (window.innerWidth < 768) {
         if (window.pJSDom && window.pJSDom[0]) {
-          window.pJSDom[0].pJS.particles.number.value = 30;
+          window.pJSDom[0].pJS.particles.number.value = 25;
         }
       }
     });
