@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <meta name="description" content="SUPREME STORE - Premium gaming & digital services. We'll be back soon!">
-  <title>SUPREME STORE | Coming Back Soon</title>
+  <meta name="description" content="SUPREME STORE - Premium gaming accounts, UC top-up, and digital design services.">
+  <title>SUPREME STORE | Gaming & Digital Services 2026</title>
   
   <!-- Google Fonts: Orbitron + Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +18,21 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
   <style>
+    :root {
+      --bg-primary: #0a0a0a;
+      --bg-card: rgba(18, 18, 18, 0.8);
+      --neon-red: #ff3131;
+      --neon-orange: #ff5500;
+      --text-primary: #e0e0e0;
+      --text-secondary: #aaa;
+      --glass-border: rgba(255, 49, 49, 0.25);
+      --glass-bg: rgba(20, 20, 20, 0.65);
+      --shadow-glow: 0 0 25px rgba(255, 49, 49, 0.5);
+      --font-orbitron: 'Orbitron', sans-serif;
+      --font-poppins: 'Poppins', sans-serif;
+      --transition-smooth: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
     * {
       margin: 0;
       padding: 0;
@@ -31,32 +46,22 @@
     }
     
     body {
-      background: #0a0a0a;
-      font-family: 'Poppins', sans-serif;
-      color: #e0e0e0;
+      background: var(--bg-primary);
+      font-family: var(--font-poppins);
+      color: var(--text-primary);
       line-height: 1.6;
       overflow-x: hidden;
       width: 100%;
       max-width: 100vw;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       -webkit-user-select: none;
       user-select: none;
     }
     
-    /* Custom scrollbar (in case content overflows on very small screens) */
-    ::-webkit-scrollbar {
-      width: 4px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #1a1a1a;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #ff3131;
-      border-radius: 3px;
-    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #1a1a1a; }
+    ::-webkit-scrollbar-thumb { background: var(--neon-red); border-radius: 10px; }
     
     /* Particle container */
     #particles-js {
@@ -69,14 +74,12 @@
       pointer-events: none;
     }
     
-    /* Loading Screen - subtle fade out */
+    /* Loading Screen */
     #loader {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #0a0a0a;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: var(--bg-primary);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -84,16 +87,13 @@
       z-index: 10000;
       transition: opacity 0.8s ease, visibility 0.8s ease;
     }
-    #loader.hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
+    #loader.hidden { opacity: 0; visibility: hidden; }
     .loader-logo {
-      font-family: 'Orbitron', sans-serif;
+      font-family: var(--font-orbitron);
       font-size: clamp(1.8rem, 6vw, 3rem);
       font-weight: 900;
-      color: #ff3131;
-      text-shadow: 0 0 20px #ff3131;
+      color: var(--neon-red);
+      text-shadow: 0 0 20px var(--neon-red);
       letter-spacing: 4px;
       animation: pulse 1.5s infinite;
       text-align: center;
@@ -107,179 +107,420 @@
       overflow: hidden;
     }
     .loader-progress {
-      width: 0%;
-      height: 100%;
-      background: #ff3131;
-      box-shadow: 0 0 15px #ff3131;
-      animation: load 1.8s ease-in-out forwards;
+      width: 0%; height: 100%;
+      background: var(--neon-red);
+      box-shadow: 0 0 15px var(--neon-red);
+      animation: load 2s ease-in-out forwards;
     }
     
-    @keyframes load {
-      0% { width: 0%; }
-      100% { width: 100%; }
-    }
+    @keyframes load { 0% { width: 0%; } 100% { width: 100%; } }
     @keyframes pulse {
-      0% { text-shadow: 0 0 20px #ff3131; }
-      50% { text-shadow: 0 0 40px #ff5500, 0 0 60px #ff3131; }
-      100% { text-shadow: 0 0 20px #ff3131; }
+      0% { text-shadow: 0 0 20px var(--neon-red); }
+      50% { text-shadow: 0 0 40px var(--neon-orange), 0 0 60px var(--neon-red); }
+      100% { text-shadow: 0 0 20px var(--neon-red); }
     }
     
-    /* Main container - centered card */
-    .maintenance-container {
-      width: 100%;
-      max-width: 750px;
-      margin: 0 auto;
-      padding: 1.5rem;
-      position: relative;
-      z-index: 10;
+    /* Maintenance Banner */
+    .maintenance-banner {
+      background: linear-gradient(90deg, #1a1a1a, #2d1111, #1a1a1a);
+      color: #ffb3b3;
+      text-align: center;
+      padding: 0.7rem 1rem;
+      font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+      font-weight: 500;
+      border-bottom: 1px solid var(--neon-red);
+      letter-spacing: 0.5px;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      gap: 0.5rem;
+      backdrop-filter: blur(5px);
+      position: relative;
+      z-index: 1001;
+    }
+    .maintenance-banner i {
+      color: var(--neon-red);
+      font-size: 1rem;
     }
     
-    /* Glassmorphism Card */
-    .glass-card {
-      background: rgba(20, 20, 20, 0.7);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 49, 49, 0.25);
-      border-radius: 28px;
-      padding: clamp(2rem, 8vw, 3.5rem) clamp(1.2rem, 6vw, 2.5rem);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 49, 49, 0.15);
-      text-align: center;
+    /* Sticky Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 49, 49, 0.35);
+      z-index: 999;
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       width: 100%;
-      transition: all 0.4s ease;
+      min-height: 58px;
     }
-    
-    /* Heading styles */
-    .store-title {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(2rem, 8vw, 3.8rem);
+    .logo {
+      font-family: var(--font-orbitron);
+      font-size: clamp(1.2rem, 3vw, 1.7rem);
       font-weight: 900;
-      color: #ff3131;
-      text-shadow: 0 0 25px #ff3131, 0 0 55px #ff5500;
-      letter-spacing: 3px;
-      margin-bottom: 0.5rem;
-      word-break: break-word;
-      line-height: 1.2;
+      color: var(--neon-red);
+      text-shadow: 0 0 15px var(--neon-red);
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
+    .nav-links {
+      display: flex;
+      gap: clamp(0.8rem, 2vw, 2rem);
+      list-style: none;
+    }
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: clamp(0.75rem, 1.4vw, 0.95rem);
+      font-family: var(--font-poppins);
+      transition: var(--transition-smooth);
+      position: relative;
+      white-space: nowrap;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px; left: 0;
+      width: 0%; height: 2px;
+      background: var(--neon-red);
+      box-shadow: 0 0 10px var(--neon-red);
+      transition: 0.3s;
+    }
+    .nav-links a:hover { color: #fff; text-shadow: 0 0 8px var(--neon-red); }
+    .nav-links a:hover::after { width: 100%; }
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      color: var(--neon-red);
+      cursor: pointer;
+      padding: 5px;
+      z-index: 1000;
     }
     
-    .status-icon {
-      font-size: clamp(2.5rem, 10vw, 4.5rem);
-      color: #ff3131;
-      text-shadow: 0 0 20px #ff3131;
-      margin-bottom: 0.8rem;
-      display: block;
-      animation: float 3s ease-in-out infinite;
+    /* Sections */
+    section {
+      padding: clamp(2.5rem, 6vw, 4.5rem) 1rem;
+      position: relative;
+      z-index: 2;
+      width: 100%;
     }
-    
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-      100% { transform: translateY(0px); }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 0.5rem;
     }
-    
-    .sub-headline {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(1.2rem, 4vw, 1.9rem);
+    .section-title {
+      font-family: var(--font-orbitron);
+      font-size: clamp(1.4rem, 5vw, 2.3rem);
       font-weight: 700;
-      color: #ffffff;
-      text-shadow: 0 0 12px rgba(255, 49, 49, 0.8);
-      margin-bottom: 1.8rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: clamp(1.5rem, 4vw, 2.8rem);
+      color: #fff;
+      text-shadow: 0 0 18px var(--neon-red);
+      letter-spacing: 2px;
     }
     
-    .message-text {
-      font-size: clamp(0.9rem, 2.2vw, 1.1rem);
-      color: #d0d0d0;
-      margin-bottom: 1.2rem;
-      line-height: 1.7;
-      font-weight: 400;
-      max-width: 550px;
-      margin-left: auto;
-      margin-right: auto;
+    /* Glassmorphism Cards */
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: clamp(1.2rem, 3vw, 2rem);
+      transition: var(--transition-smooth);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .glass-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--neon-red);
+      box-shadow: var(--shadow-glow);
+      background: rgba(25, 25, 25, 0.8);
     }
     
-    .highlight {
-      color: #ff3131;
+    /* Hero */
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at center, rgba(255,49,49,0.15) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 {
+      font-family: var(--font-orbitron);
+      font-size: clamp(2rem, 8vw, 4rem);
+      font-weight: 900;
+      color: var(--neon-red);
+      text-shadow: 0 0 35px var(--neon-red), 0 0 70px var(--neon-orange);
+      margin-bottom: 1rem;
+      word-wrap: break-word;
+    }
+    .hero p {
+      font-size: clamp(0.9rem, 2.2vw, 1.3rem);
+      color: #ddd;
+      max-width: 650px;
+      margin-bottom: 2.5rem;
+      padding: 0 0.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
       font-weight: 600;
-      text-shadow: 0 0 8px rgba(255,49,49,0.5);
+      font-family: var(--font-poppins);
+      text-decoration: none;
+      letter-spacing: 0.8px;
+      transition: var(--transition-smooth);
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--neon-red);
+      color: #fff;
+      box-shadow: 0 0 22px var(--neon-red);
+    }
+    .btn-primary:hover {
+      background: var(--neon-orange);
+      box-shadow: 0 0 40px var(--neon-orange);
+      transform: scale(1.06);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--neon-red);
+      color: var(--neon-red);
+      box-shadow: 0 0 12px rgba(255,49,49,0.4);
+    }
+    .btn-outline:hover {
+      background: var(--neon-red);
+      color: #fff;
+      box-shadow: 0 0 30px var(--neon-red);
     }
     
-    .signature {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.3rem;
+    /* Grids */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: clamp(1rem, 2.5vw, 1.8rem);
+      margin-top: 1.5rem;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: clamp(0.8rem, 2vw, 1.5rem);
+      margin-top: 1.5rem;
+    }
+    .service-icon {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      color: var(--neon-red);
+      margin-bottom: 1rem;
+    }
+    .card-title {
+      font-family: var(--font-orbitron);
+      font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+      margin-bottom: 0.8rem;
+      color: #fff;
+    }
+    
+    /* Pricing Cards */
+    .price-tag {
+      font-family: var(--font-orbitron);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--neon-red);
+      margin: 0.8rem 0;
+      text-shadow: 0 0 10px var(--neon-red);
+    }
+    .uc-amount {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+    
+    /* Trust Badges */
+    .trust-badge {
+      background: rgba(255,49,49,0.08);
+      border: 1px solid rgba(255,49,49,0.4);
+      border-radius: 16px;
+      padding: 1.2rem 0.8rem;
+      text-align: center;
+      transition: var(--transition-smooth);
+    }
+    .trust-badge:hover {
+      background: rgba(255,49,49,0.15);
+      border-color: var(--neon-red);
+    }
+    .trust-number {
+      font-family: var(--font-orbitron);
+      font-size: 2rem;
       font-weight: 700;
       color: #fff;
-      margin-top: 2rem;
-      letter-spacing: 2px;
-      text-shadow: 0 0 15px #ff3131;
+      text-shadow: 0 0 15px var(--neon-red);
     }
     
-    .heart {
-      color: #ff3131;
-      font-size: 1.4rem;
-      margin: 0 5px;
-      animation: pulse 1.8s infinite;
+    /* FAQ Accordion */
+    .faq-item {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: 14px;
+      margin-bottom: 0.8rem;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 1rem 1.5rem;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      color: #fff;
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s;
+      background: rgba(0,0,0,0.3);
+      padding: 0 1.5rem;
+      color: #ccc;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding: 1rem 1.5rem;
+    }
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
     }
     
-    /* Animated "Coming Back Soon" effect */
-    .coming-soon-badge {
-      display: inline-block;
-      margin-top: 1.8rem;
-      padding: 0.6rem 1.8rem;
-      border-radius: 40px;
-      background: rgba(255, 49, 49, 0.15);
-      border: 1px solid #ff3131;
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 500;
-      font-size: 0.9rem;
-      letter-spacing: 2px;
-      color: #ff3131;
-      text-transform: uppercase;
-      box-shadow: 0 0 18px rgba(255, 49, 49, 0.4);
-      animation: glowPulse 2.2s infinite alternate;
-    }
-    
-    @keyframes glowPulse {
-      0% { box-shadow: 0 0 12px rgba(255, 49, 49, 0.4); border-color: rgba(255,49,49,0.6); }
-      100% { box-shadow: 0 0 28px rgba(255, 49, 49, 0.8); border-color: #ff3131; }
-    }
-    
-    /* Subtle divider */
-    .divider {
-      width: 80px;
-      height: 3px;
-      background: #ff3131;
-      margin: 1.8rem auto;
-      border-radius: 10px;
-      box-shadow: 0 0 15px #ff3131;
-    }
-    
-    /* Footer note */
-    .footer-note {
-      font-size: 0.8rem;
-      color: #888;
-      margin-top: 2.5rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 1.5rem;
+    /* Floating WhatsApp */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: #25D366;
+      color: white;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.3rem;
+      font-size: 2rem;
+      box-shadow: 0 0 25px rgba(37, 211, 102, 0.6);
+      z-index: 997;
+      transition: var(--transition-smooth);
+      text-decoration: none;
+    }
+    .floating-whatsapp:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 35px #25D366;
     }
     
-    /* Responsive adjustments */
+    /* Back to Top */
+    #backToTop {
+      position: fixed;
+      bottom: 100px;
+      right: 28px;
+      background: var(--neon-red);
+      color: white;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 0 18px var(--neon-red);
+      z-index: 998;
+      transition: 0.3s;
+      opacity: 0;
+      visibility: hidden;
+      font-size: 1rem;
+    }
+    #backToTop.show { opacity: 1; visibility: visible; }
+    
+    /* Contact buttons */
+    .contact-methods {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .btn-wa {
+      background: #25D366;
+      color: #fff;
+      box-shadow: 0 0 15px #25D366;
+    }
+    .btn-telegram {
+      background: #0088cc;
+      color: #fff;
+      box-shadow: 0 0 15px #0088cc;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0; right: -100%;
+        flex-direction: column;
+        background: rgba(10, 10, 10, 0.98);
+        width: 75%; max-width: 280px;
+        height: 100vh;
+        padding: 80px 1.5rem 2rem;
+        transition: right 0.35s ease-in-out;
+        backdrop-filter: blur(20px);
+        gap: 1.4rem;
+        border-left: 1px solid rgba(255,49,49,0.4);
+      }
+      .nav-links.active { right: 0; }
+      .nav-overlay {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.7); z-index: 998;
+        opacity: 0; visibility: hidden; transition: 0.3s;
+      }
+      .nav-overlay.active { opacity: 1; visibility: visible; }
+      .hamburger { display: block; }
+      .grid-3, .grid-4 { grid-template-columns: 1fr 1fr; }
+    }
     @media (max-width: 480px) {
-      .glass-card {
-        padding: 1.8rem 1rem;
-        border-radius: 22px;
-      }
-      .maintenance-container {
-        padding: 0.8rem;
-      }
+      .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .btn-group { flex-direction: column; align-items: center; width: 100%; }
+      .btn { width: 100%; justify-content: center; }
+      .floating-whatsapp { width: 50px; height: 50px; font-size: 1.8rem; bottom: 20px; right: 20px; }
+      #backToTop { bottom: 80px; right: 20px; }
     }
   </style>
 </head>
@@ -290,125 +531,296 @@
     <div class="loader-bar"><div class="loader-progress"></div></div>
   </div>
 
-  <!-- Particles Background -->
+
+  <!-- Overlay -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- Particles -->
   <div id="particles-js"></div>
 
-  <!-- Main Maintenance Content -->
-  <div class="maintenance-container">
-    <div class="glass-card" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-out">
-      
-      <!-- Animated icon -->
-      <div class="status-icon">
-        <i class="fas fa-tools"></i>
-      </div>
-      
-      <!-- Store name -->
-      <h1 class="store-title">SUPREME STORE</h1>
-      
-      <!-- Headline -->
-      <div class="sub-headline">
-        🚧 We're Temporarily Closed
-      </div>
-      
-      <div class="divider"></div>
-      
-      <!-- Message -->
-      <p class="message-text">
-        Thank you for all your support. We're currently working behind the scenes on 
-        <span class="highlight">exciting new features</span>, improved services, and a completely refreshed experience.
-      </p>
-      <p class="message-text">
-        Our store will return in a few months, <span class="highlight">bigger and better than ever</span>.
-      </p>
-      <p class="message-text">
-        We appreciate your patience and can't wait to welcome you back.
-      </p>
-      
-      <!-- Signature -->
-      <div class="signature">
-        See you soon <span class="heart">❤️</span>
-      </div>
-      
-      <!-- Animated badge -->
-      <div class="coming-soon-badge">
-        <i class="fas fa-clock" style="margin-right: 6px;"></i> Coming Back Soon
-      </div>
-      
-      <!-- Footer note inside card -->
-      <div class="footer-note">
-        <i class="fas fa-shield-alt" style="color: #ff3131;"></i> 
-        <span>SUPREME STORE</span>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">SUPREME STORE</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#pubg">PUBG</a></li>
+      <li><a href="#pricing">UC Prices</a></li>
+      <li><a href="#digital">Digital</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-down" data-aos-duration="1000">
+      <h1>SUPREME STORE</h1>
+      <p>⚡ Premium Gaming Accounts & Digital Services · 2026 Edition</p>
+      <div class="btn-group">
+        <a href="#pricing" class="btn btn-primary"><i class="fas fa-coins"></i> View UC Prices</a>
+        <a href="#contact" class="btn btn-outline"><i class="fas fa-bolt"></i> Contact Support</a>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- PUBG Services -->
+  <section id="pubg">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">🎮 PUBG Services</h2>
+      <div class="grid-3">
+        <div class="glass-card" data-aos="zoom-in">
+          <div class="service-icon"><i class="fas fa-user-shield"></i></div>
+          <h3 class="card-title">PUBG Accounts</h3>
+          <p>Premium accounts with rare skins, high levels, and verified security. Instant delivery.</p>
+          <a href="#contact" class="btn btn-primary" style="margin-top: auto;">Order Now</a>
+        </div>
+        <div class="glass-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="service-icon"><i class="fas fa-coins"></i></div>
+          <h3 class="card-title">UC Top-Up</h3>
+          <p>Fast & affordable Unknown Cash. Secure payment with bonus deals available.</p>
+          <a href="#pricing" class="btn btn-primary" style="margin-top: auto;">See Prices</a>
+        </div>
+        <div class="glass-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+          <h3 class="card-title">Popularity Boost</h3>
+          <p>Increase profile likes, followers, and engagement. Become a recognized player.</p>
+          <a href="#contact" class="btn btn-primary" style="margin-top: auto;">Boost Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UC Pricing Section -->
+  <section id="pricing">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">💎 UC Top-Up Packages</h2>
+      <div class="grid-4">
+        <div class="glass-card" data-aos="fade-up">
+          <div class="uc-amount">60 UC</div>
+          <div class="price-tag">TSH 3,400</div>
+          <p style="font-size:0.9rem;">Basic Pack</p>
+          <a href="#contact" class="btn btn-outline" style="margin-top: auto;">Buy</a>
+        </div>
+        <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="uc-amount">325 UC</div>
+          <div class="price-tag">TSH 13,000</div>
+          <p style="font-size:0.9rem;">Popular Pack</p>
+          <a href="#contact" class="btn btn-outline" style="margin-top: auto;">Buy</a>
+        </div>
+        <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="uc-amount">660 UC</div>
+          <div class="price-tag">TSH 25,000</div>
+          <p style="font-size:0.9rem;">Value Pack</p>
+          <a href="#contact" class="btn btn-outline" style="margin-top: auto;">Buy</a>
+        </div>
+        <div class="glass-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="uc-amount">1800 UC</div>
+          <div class="price-tag">TSH 61,000</div>
+          <p style="font-size:0.9rem;">Mega Pack</p>
+          <a href="#contact" class="btn btn-outline" style="margin-top: auto;">Buy</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Digital Services -->
+  <section id="digital">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">🖥️ Digital Services</h2>
+      <div class="grid-3">
+        <div class="glass-card" data-aos="flip-left">
+          <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+          <h3 class="card-title">Graphic Design</h3>
+          <p>Stunning logos, banners, and branding kits tailored for gamers and streamers.</p>
+          <a href="#contact" class="btn btn-outline" style="margin-top: auto;">Hire Designer</a>
+        </div>
+        <div class="glass-card" data-aos="flip-left" data-aos-delay="100">
+          <div class="service-icon"><i class="fas fa-image"></i></div>
+          <h3 class="card-title">Poster Design</h3>
+          <p>Esports posters, event flyers, and social media graphics with neon aesthetics.</p>
+          <a href="#contact" class="btn btn-outline" style="margin-top: auto;">Order Poster</a>
+        </div>
+        <div class="glass-card" data-aos="flip-left" data-aos-delay="200">
+          <div class="service-icon"><i class="fas fa-video"></i></div>
+          <h3 class="card-title">Video Editing</h3>
+          <p>Montages, highlight reels, and YouTube intros with professional transitions.</p>
+          <a href="#contact" class="btn btn-outline" style="margin-top: auto;">Edit Video</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">⚡ Why Choose Us</h2>
+      <div class="grid-4">
+        <div class="feature-item glass-card" data-aos="fade-right" style="flex-direction: row; align-items: center; gap:1rem;">
+          <i class="fas fa-tags" style="font-size:2rem; color:var(--neon-red);"></i>
+          <span><strong>Cheap & Affordable</strong><br>Best market prices</span>
+        </div>
+        <div class="feature-item glass-card" data-aos="fade-up" style="flex-direction: row; align-items: center; gap:1rem;">
+          <i class="fas fa-shield-alt" style="font-size:2rem; color:var(--neon-red);"></i>
+          <span><strong>Trusted Seller</strong><br>Verified reputation</span>
+        </div>
+        <div class="feature-item glass-card" data-aos="fade-down" style="flex-direction: row; align-items: center; gap:1rem;">
+          <i class="fas fa-bolt" style="font-size:2rem; color:var(--neon-red);"></i>
+          <span><strong>Quick Response</strong><br>Instant replies</span>
+        </div>
+        <div class="feature-item glass-card" data-aos="fade-left" style="flex-direction: row; align-items: center; gap:1rem;">
+          <i class="fas fa-headset" style="font-size:2rem; color:var(--neon-red);"></i>
+          <span><strong>Friendly Support</strong><br>Mostly available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted by Players -->
+  <section id="trust">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">🏆 Trusted by Players</h2>
+      <div class="grid-3" style="text-align: center;">
+        <div class="trust-badge" data-aos="zoom-in">
+          <div class="trust-number">1,200+</div>
+          <p>Happy Customers</p>
+        </div>
+        <div class="trust-badge" data-aos="zoom-in" data-aos-delay="100">
+          <div class="trust-number">98%</div>
+          <p>Satisfaction Rate</p>
+        </div>
+        <div class="trust-badge" data-aos="zoom-in" data-aos-delay="200">
+          <div class="trust-number">24/7</div>
+          <p>Support Available</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">❓ Frequently Asked Questions</h2>
+      <div class="faq-item" data-aos="fade-right">
+        <div class="faq-question">How to buy UC? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Contact us via WhatsApp with your Player ID and desired UC package. Payment first, then instant delivery.</div>
+      </div>
+      <div class="faq-item" data-aos="fade-left">
+        <div class="faq-question">Is my account safe? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Absolutely. We use secure, legitimate methods. No password required for UC top-ups.</div>
+      </div>
+      <div class="faq-item" data-aos="fade-right">
+        <div class="faq-question">Delivery time? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Usually within 5-6 minutes after payment confirmation.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container" style="text-align: center;">
+      <h2 class="section-title" data-aos="fade-up">📞 Contact Us</h2>
+      <div class="glass-card" style="max-width: 480px; margin: 0 auto;" data-aos="zoom-in">
+        <p class="contact-phone" style="font-size:1.4rem;"><i class="fas fa-phone-alt" style="color:var(--neon-red);"></i> 0747 048 630</p>
+        <div class="contact-methods">
+          <a href="https://wa.me/255747048630" target="_blank" class="btn btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        <div style="margin-top:1.2rem; font-size:0.8rem; color:#aaa;">
+          <i class="fab fa-whatsapp"></i> Message us on WhatsApp/Telegram — no calls, please.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background: #050505; border-top: 1px solid var(--neon-red); text-align: center; padding: 2rem 1rem;">
+    <h3 style="font-family: var(--font-orbitron); color: var(--neon-red);">SUPREME STORE</h3>
+    <p>Power Your Game & Creativity</p>
+    <div class="social-icons" style="margin: 1.2rem 0; display: flex; gap: 1.5rem; justify-content: center; font-size: 1.5rem;">
+    </div>
+    <p style="color:#666; font-size:0.8rem;">Copyright 2026 Supreme Store. All rights reserved.</p>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/255747048630" target="_blank" class="floating-whatsapp" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <div id="backToTop" title="Back to top"><i class="fas fa-arrow-up"></i></div>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   
   <script>
-    // Initialize AOS (fade animations)
-    AOS.init({ 
-      once: true, 
-      duration: 700,
-      offset: 20
-    });
+    AOS.init({ once: true, duration: 650 });
     
-    // Loading screen behavior
     window.addEventListener('load', () => {
-      setTimeout(() => {
-        const loader = document.getElementById('loader');
-        if (loader) {
-          loader.classList.add('hidden');
-        }
-      }, 1300);
+      setTimeout(() => document.getElementById('loader').classList.add('hidden'), 1200);
     });
     
-    // Particles.js configuration (gaming neon red theme)
     particlesJS('particles-js', {
       particles: {
-        number: { 
-          value: window.innerWidth < 768 ? 30 : 55,
-          density: { enable: true, value_area: 800 } 
-        },
+        number: { value: window.innerWidth < 768 ? 28 : 55, density: { enable: true, value_area: 800 } },
         color: { value: '#ff3131' },
         shape: { type: 'circle' },
-        opacity: { value: 0.25, random: true },
+        opacity: { value: 0.35, random: true },
         size: { value: 2.5, random: true },
-        line_linked: { 
-          enable: true, 
-          distance: 130, 
-          color: '#ff3131', 
-          opacity: 0.15, 
-          width: 1.2 
-        },
-        move: { 
-          enable: true, 
-          speed: 1.1, 
-          direction: 'none', 
-          random: false, 
-          straight: false, 
-          out_mode: 'out' 
-        }
+        line_linked: { enable: true, distance: 130, color: '#ff3131', opacity: 0.15, width: 1 },
+        move: { enable: true, speed: 1.3, direction: 'none', random: false, straight: false, out_mode: 'out' }
       },
       interactivity: {
         detect_on: 'canvas',
-        events: { 
-          onhover: { enable: true, mode: 'repulse' }, 
-          onclick: { enable: true, mode: 'push' } 
-        },
-        modes: { repulse: { distance: 60 } }
+        events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
+        modes: { repulse: { distance: 70 } }
       },
       retina_detect: true
     });
     
-    // Adjust particles on resize for performance
-    window.addEventListener('resize', () => {
-      if (window.pJSDom && window.pJSDom[0]) {
-        const newValue = window.innerWidth < 768 ? 30 : 55;
-        window.pJSDom[0].pJS.particles.number.value = newValue;
-        window.pJSDom[0].pJS.fn.particlesRefresh();
-      }
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const overlay = document.getElementById('navOverlay');
+    
+    function toggleNav() {
+      navLinks.classList.toggle('active');
+      overlay.classList.toggle('active');
+      const icon = hamburger.querySelector('i');
+      icon.className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
+    }
+    
+    hamburger.addEventListener('click', toggleNav);
+    document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => {
+      if (navLinks.classList.contains('active')) toggleNav();
+    }));
+    overlay.addEventListener('click', toggleNav);
+    
+    const backBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backBtn.classList.toggle('show', window.scrollY > 300);
+    });
+    backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const parent = q.parentElement;
+        parent.classList.toggle('active');
+      });
+    });
+    
+    // Smooth scroll offset
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offset = 70;
+          const pos = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: pos, behavior: 'smooth' });
+        }
+      });
     });
   </script>
 </body>
